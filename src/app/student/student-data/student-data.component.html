@@ -1,0 +1,28 @@
+
+<div class="container">          
+  <table class="table table.active">
+    <thead>
+      <tr>
+        <th>StudentID</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>InterestedCourse</th>
+        <th>      </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentData">
+        <th>{{student.studentID}}</th>
+        <th>{{student.firstName}}</th>
+        <th>{{student.middleName}}</th>
+        <th>{{student.lastName}}</th>
+        <th>{{student.interestedCourse}}</th>
+        <th><button class="btn btn-primary" (click)="handleEdit(studentValue)">EDIT</button>
+        <button class="btn btn-info" (click)="handleDelete(event)">DELETE</button></th>
+      </tr>
+    </tbody>
+    </table>
+<div class="float-right">
+  <button class="btn btn-primary" (click)="handleClick()">FormPage</button>
+</div>

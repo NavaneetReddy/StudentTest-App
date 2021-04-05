@@ -1,0 +1,41 @@
+<div class="container container-default">
+<form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+  <div class="form-group">
+    <label for="studentID">StudentID:</label>
+    <input type="text" class="form-control" placeholder="StudentID" 
+    formControlName="studentID" [ngModel]="studentEdit.studentID">
+  </div>
+<div class="from-group">
+  <label for="FirstName">FirstName:</label>
+  <input type="text" class="form-control" placeholder="StudentFirstName" formControlName="firstName">
+  <div *ngIf="uName.touched && uName.errors != null">
+    <div class="alert-alert danger" *ngIf="uName.errors.required">
+      UserName is A Required Field
+    </div>
+    <div class="alert-alert danger" *ngIf="uName.errors.minlength">
+      UserName should have minium of {{uName.errors.minlength.requiredLength}} characters
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="MiddleName">MiddleName:</label>
+  <input type="text" class="form-control" placeholder="MiddleName" 
+  formControlName="middleName">
+</div>
+<div class="form-group">
+  <label for="LastName">StudentMiddleName:</label>
+  <input type="text" class="form-control" placeholder="lastName" formControlName="lastName">
+</div>
+<div class="form-group">
+  <label for="interestedCourse">InterestedCourse:</label>
+  <select type="text" class="form-control" formControlName="interestedCourse">
+    <option *ngFor="let course of courses">{{course}}</option>
+</select>
+  </div>
+<button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+</div>
+<div class="float-right">
+<button class="btn btn-primary" (click)="handleClick()">DataPage</button>
+</div>
+
